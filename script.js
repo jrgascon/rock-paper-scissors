@@ -84,11 +84,11 @@ function playRounds(){
         }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
             humanScore += 1;
             humanScoreInput.textContent = humanScore;
-            alert("Win, try again");
+            alert("The computer chose rock you win, try again");
         }else{ 
             computerScore += 1;
             computerScoreInput.textContent = computerScore;
-            alert("lose, try again");
+            alert("The computer chose scissors you lose, try again");
          }
         
     })
@@ -106,11 +106,11 @@ function playRounds(){
         }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
             humanScore += 1;
             humanScoreInput.textContent = humanScore;
-            alert("Win, try again");
+            alert("The computer chose paper you win, try again");
         }else{ 
             computerScore += 1;
             computerScoreInput.textContent = computerScore;
-            alert("lose, try again");
+            alert("The computer chose rock you lose, try again");
          }
         
     })
@@ -128,11 +128,11 @@ function playRounds(){
         }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
             humanScore += 1;
             humanScoreInput.textContent = humanScore;
-            alert("Win, try again");
+            alert("The computer chose scissors you win, try again");
         }else{ 
             computerScore += 1;
             computerScoreInput.textContent = computerScore;
-            alert("lose, try again");
+            alert("The computer chose paper you lose, try again");
          }
         
     })
