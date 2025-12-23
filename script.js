@@ -1,3 +1,9 @@
+const btnpaper = document.querySelector("#paper") 
+const btnscissors = document.querySelector("#scissors")
+const btnrock = document.querySelector("#rock")
+const humanScoreInput = document.querySelector("#human-score");
+const computerScoreInput = document.querySelector('#computer-score');
+
 playRounds()
 
 function getOption(number) {
@@ -29,11 +35,11 @@ function getComputerChoice() {
     
 function getHumanChoice(humanChoice) {
     
-    if (humanChoice.toLowerCase() == "scissors"){
+    if (humanChoice == "scissors"){
         return 1;
-    } else if(humanChoice.toLowerCase() == "paper"){
+    } else if(humanChoice == "paper"){
         return 2;
-    } else if (humanChoice.toLowerCase() == "rock"){
+    } else if (humanChoice == "rock"){
         return 3;
     }else
         return "error";
@@ -62,28 +68,73 @@ function gameLogic(human, computer) {
 function playRounds(){
 
     let choice
-    let rounds = 0
     let computerScore = 0;
     let humanScore = 0;
-    
-    while (rounds < 5) {
 
-        choice = prompt("Write: Scissors, Paper or Rock    Round:" + (rounds+1));
+    btnpaper.addEventListener("click", (event) => {
+        
+        event.preventDefault();
+        choice = "paper";
+        
         let computerChoice = getComputerChoice();
-        let humanChoice = getHumanChoice(choice)
-
-        if (humanChoice == "error"|| gameLogic(humanChoice, computerChoice) == "draw") {
+        let humanChoice = getHumanChoice(choice);
+        
+        if (gameLogic(humanChoice, computerChoice) == "draw") {
+            alert("draw, try again")
         }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
-            humanScore += 1;    
-        }else{ computerScore += 1 }
+            humanScore += 1;
+            humanScoreInput.textContent = humanScore;
+            alert("Win, try again");
+        }else{ 
+            computerScore += 1;
+            computerScoreInput.textContent = computerScore;
+            alert("lose, try again");
+         }
+        
+    })
 
-        console.log("Computer choice " + getOption(computerChoice) + "  " + computerChoice);
-        console.log("Human choice " +getOption(humanChoice) + "  " + humanChoice);
-        console.log("Computer Score = " + computerScore)
-        console.log("Human Score = " + humanScore)
-        alert(gameLogic(humanChoice, computerChoice));
-        if(humanChoice != "error") rounds += 1
+    btnscissors.addEventListener("click", (event) => {
+        
+        event.preventDefault();
+        choice = "scissors";
+        
+        let computerChoice = getComputerChoice();
+        let humanChoice = getHumanChoice(choice);
+        
+        if (gameLogic(humanChoice, computerChoice) == "draw") {
+            alert("draw, try again")
+        }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
+            humanScore += 1;
+            humanScoreInput.textContent = humanScore;
+            alert("Win, try again");
+        }else{ 
+            computerScore += 1;
+            computerScoreInput.textContent = computerScore;
+            alert("lose, try again");
+         }
+        
+    })
 
-    }
+    btnrock.addEventListener("click", (event) => {
+        
+        event.preventDefault();
+        choice = "rock";
+        
+        let computerChoice = getComputerChoice();
+        let humanChoice = getHumanChoice(choice);
+        
+        if (gameLogic(humanChoice, computerChoice) == "draw") {
+            alert("draw, try again")
+        }else if (gameLogic(humanChoice, computerChoice) == "win, try again") {
+            humanScore += 1;
+            humanScoreInput.textContent = humanScore;
+            alert("Win, try again");
+        }else{ 
+            computerScore += 1;
+            computerScoreInput.textContent = computerScore;
+            alert("lose, try again");
+         }
+        
+    })
 
 }

@@ -1,0 +1,41 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 48px;
+    background: burlywood;
+    text-align: center;
+}
+
+#elections{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button{
+    width: 20rem;
+    height: 10rem;
+    font-size: 7rem;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+#score{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: end;
+    padding: 3rem;
+}
+
+.counter{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}

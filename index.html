@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+
+    <section id="main">
+        <h1 id="title">Rock-Paper-Scissors</h1>
+
+        <div id="score">
+            <h2>Score:</h2>
+            <div class="counter">
+                <p>🤖:<label id="computer-score">0</label></p>
+                <p>🙎‍♂️:<label id="human-score">0</label></p>
+            </div>
+        </div>
+
+        <div id="elections">
+            <button class="button" id="rock">🪨</button>
+            <button class="button" id="paper">📄</button>
+            <button class="button" id="scissors">✂️</button>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 
 </body>
 </html>
+
+
